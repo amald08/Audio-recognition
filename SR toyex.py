@@ -43,8 +43,8 @@ class SplitWavAudioMubin():
             if i == total_mins - min_per_split:
                 print('All splited successfully')
 
-folder = 'C:\Work\Integra\Video to text'
-file = 'mananera2.wav'
+folder = 'folder'
+file = 'file.wav'
 split_wav = SplitWavAudioMubin(folder, file)
 X = split_wav.multiple_split(min_per_split = .5)
 # split_wav.multiple_split(min_per_split = .5)
@@ -54,7 +54,7 @@ X = split_wav.multiple_split(min_per_split = .5)
 r = sr.Recognizer()
 
 # Many files
-directory = 'C:\Work\Integra\Video to text\Split2'
+directory = 'directory'
 
 # Exported Splits
 # r = sr.Recognizer()
@@ -76,8 +76,8 @@ directory = 'C:\Work\Integra\Video to text\Split2'
 #     else:
 #         continue
 
-# Withour writting the splits
-directory = 'C:\Work\Integra\Video to text\Split'
+# Without writting the splits
+directory = 'directory'
 r = sr.Recognizer()
 for x in X:
     b = io.BytesIO()
@@ -89,7 +89,7 @@ for x in X:
     try:
         result = r.recognize_google(audio_file, language="es-ES")
     except:
-        result = 'No se entiend'
+        result = 'Cannot understand'
     # result = r.recognize_google(audio_file, language = 'es-Es')
     # s = filename.split('_')[0]
     with open(directory + '\\' + 'harina.txt', mode = 'a') as file:
